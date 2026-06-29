@@ -41,8 +41,12 @@ Public Class Form1
 
         Try
             'Play welcome sound
-            Dim player As New SoundPlayer("Resources\Welcome.wav")
-            player.Play()
+            If File.Exists("Resources\Welcome.wav") Then
+
+                Dim player As New SoundPlayer("Resources\Welcome.wav")
+                player.Play()
+
+            End If
 
             'Load ASCII Art
             If File.Exists("Resources\ASCIIArt.txt") Then
@@ -59,6 +63,10 @@ Public Class Form1
         Catch ex As Exception
             MessageBox.Show("Welcome resources missing: " & ex.Message)
         End Try
+
+        rtbChat.AppendText(
+    "Bot: Welcome! Before we begin, what's your name?" &
+    Environment.NewLine)
 
     End Sub
 
@@ -312,7 +320,13 @@ Public Class Form1
        input.Contains("remember me") Or
        input.Contains("what do you know about me") Then
 
-        Return "MEMORY"
+            Return "MEMORY"
+
+        ElseIf input.Contains("tell me more") Or
+   input.Contains("another tip") Or
+   input.Contains("explain more") Then
+
+            Return "MORE"
 
         End If
 
@@ -456,6 +470,8 @@ Public Class Form1
 
             userName = txtChat.Text.Trim()
 
+            rtbChat.AppendText("You: " & userName & Environment.NewLine)
+
             rtbChat.AppendText(
         "Bot: Nice to meet you, " &
         userName &
@@ -486,6 +502,27 @@ Public Class Form1
 
         Dim sentiment As String = GetSentiment(input)
 
+        If input.Contains("password") Then
+
+            favouriteTopic = "passwords"
+
+        ElseIf input.Contains("phishing") Then
+
+            favouriteTopic = "phishing"
+
+        ElseIf input.Contains("privacy") Or
+       input.Contains("facebook") Or
+       input.Contains("instagram") Then
+
+            favouriteTopic = "privacy"
+
+        ElseIf input.Contains("2fa") Or
+       input.Contains("authentication") Then
+
+            favouriteTopic = "two-factor authentication"
+
+        End If
+
         Select Case sentiment
 
             Case "NEGATIVE"
@@ -508,24 +545,6 @@ Public Class Form1
 
         End Select
 
-        If input.Contains("interested in password") Then
-
-            favouriteTopic = "passwords"
-
-        ElseIf input.Contains("interested in phishing") Then
-
-            favouriteTopic = "phishing"
-
-        ElseIf input.Contains("interested in privacy") Then
-
-            favouriteTopic = "privacy"
-
-        ElseIf input.Contains("interested in 2fa") Then
-
-            favouriteTopic = "two-factor authentication"
-
-        End If
-
         Select Case intent
 
             Case "MEMORY"
@@ -546,12 +565,52 @@ Public Class Form1
 
                 End If
 
+                AddActivity("Bot recalled user's favourite topic.")
+
+            Case "MORE"
+
+                Select Case currentTopic
+
+                    Case "password"
+
+                        rtbChat.AppendText(
+                        "Bot: Consider using a password manager to create and store strong, unique passwords for each account." &
+                        Environment.NewLine)
+
+                    Case "phishing"
+
+                        rtbChat.AppendText(
+                        "Bot: Always check the sender's email address and avoid opening unexpected attachments." &
+                        Environment.NewLine)
+
+                    Case "privacy"
+
+                        rtbChat.AppendText(
+                        "Bot: Limit the personal information you share online and regularly review your privacy settings." &
+                        Environment.NewLine)
+
+                    Case "2fa"
+
+                        rtbChat.AppendText(
+                        "Bot: Use an authenticator app instead of SMS whenever possible for better security." &
+                        Environment.NewLine)
+
+                    Case Else
+
+                        rtbChat.AppendText(
+                        "Bot: Ask me about passwords, phishing, privacy or two-factor authentication first." &
+                        Environment.NewLine)
+
+                End Select
+
+                AddActivity("User requested more information.")
+
             Case "GREETING"
 
                 rtbChat.AppendText(
 "Bot: Hello " &
 userName &
-"! Welcome back to the Cybersecurity Awareness Chatbot." &
+"! Welcome back. How can I help you stay safe online today?" &
 Environment.NewLine)
                 AddActivity("Bot greeted the user.")
 
@@ -565,6 +624,8 @@ Environment.NewLine)
 
             Case "PASSWORD"
 
+                currentTopic = "password"
+
                 rtbChat.AppendText(
     "Bot: Use a strong password with uppercase letters, lowercase letters, numbers and symbols. Avoid using birthdays or common words, and never reuse passwords." &
     Environment.NewLine)
@@ -573,6 +634,8 @@ Environment.NewLine)
 
             Case "PHISHING"
 
+                currentTopic = "phishing"
+
                 rtbChat.AppendText(
     "Bot: Phishing is a scam where criminals try to steal your personal information using fake emails, websites or messages. Never click suspicious links or share your passwords." &
     Environment.NewLine)
@@ -580,6 +643,8 @@ Environment.NewLine)
                 AddActivity("Bot explained phishing.")
 
             Case "PRIVACY"
+
+                currentTopic = "privacy"
 
                 If input.Contains("facebook") Then
 
@@ -604,6 +669,8 @@ Environment.NewLine)
                 AddActivity("Bot explained privacy.")
 
             Case "2FA"
+
+                currentTopic = "2fa"
 
                 rtbChat.AppendText(
     "Bot: Two-factor authentication (2FA) adds an extra layer of security by requiring a second verification step, making it much harder for attackers to access your account." &
