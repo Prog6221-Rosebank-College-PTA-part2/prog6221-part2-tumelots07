@@ -1,75 +1,87 @@
-🛡️ Cybersecurity Awareness Chatbot (VB.NET Windows Forms)
-👨‍💻 Developer
+# 🛡️ Cybersecurity Awareness Chatbot  
+## VB.NET Windows Forms Application
 
-Student Project — PROG6221 POE Part 3
+---
 
-📌 Project Overview
+## 👨‍💻 Project Overview
+This project is a Cybersecurity Awareness Chatbot developed using VB.NET Windows Forms and MySQL as part of a Portfolio of Evidence (POE).
 
-This project is a Cybersecurity Awareness Chatbot built using VB.NET Windows Forms and MySQL.
+The system is designed to improve cybersecurity awareness through an interactive chatbot while integrating task management, reminders, a quiz module, and activity logging.
 
-It is designed to educate users about cybersecurity while also providing:
+It demonstrates key software engineering principles including:
+- Event-driven programming
+- Database integration (CRUD operations)
+- Basic Natural Language Processing (NLP) simulation
+- Modular system design
 
-Task management
-Reminders
-Interactive quiz game
-Activity tracking
-Basic NLP simulation
-🚀 Features
-💬 Chatbot (NLP Simulation)
-Detects user intent using keyword matching
-Responds to cybersecurity-related questions
-Supports greetings, phishing, passwords, privacy, and more
-📋 Task Assistant (MySQL Database)
-Add cybersecurity tasks
-View all tasks in a grid
-Mark tasks as completed
-Delete tasks
-Stores all data in MySQL database
-⏰ Reminder System
-Users can set reminders for tasks
-Automatic reminder checks on startup
-🧠 Cybersecurity Quiz Game
-12+ multiple-choice questions
-Instant feedback per question
-Final score with performance message
-📊 Activity Log
-Tracks user and system actions
-Logs tasks, quiz activity, and chatbot interactions
-Displays recent actions for review
-🎵 UI Enhancements
-Welcome sound plays on startup
-ASCII art displayed on launch
-🛠️ Technologies Used
-VB.NET Windows Forms
-MySQL Database
-ADO.NET (MySQL Connector)
-Basic NLP (string matching simulation)
-🧪 How to Run the Project
-Open the solution in Visual Studio
-Ensure MySQL server is running
-Update connection string in DatabaseHelper.vb
-Run the application
-📂 Database Setup
+---
 
-Create a database:
+## 🎯 Key Features
 
-CREATE DATABASE CybersecurityChatbotDB;
+### 💬 Chatbot with NLP Simulation
+- Keyword-based intent detection
+- Cybersecurity topics:
+  - Password security
+  - Phishing awareness
+  - Privacy protection
+  - Two-factor authentication
+- Sentiment detection:
+  - Positive
+  - Negative
+  - Confused
 
-Table:
+---
 
-CREATE TABLE Tasks (
-    TaskID INT AUTO_INCREMENT PRIMARY KEY,
-    Title VARCHAR(255),
-    Description TEXT,
-    ReminderDate DATE,
-    IsCompleted BOOLEAN
-);
-🎯 Key Learning Outcomes
-Windows Forms GUI development
-Database integration with MySQL
-Event-driven programming
-Basic NLP simulation techniques
-Software design and modular programming
-📌 Author Notes
+### 📋 Task Assistant (MySQL Integration)
+- Create cybersecurity-related tasks
+- View all tasks
+- Mark tasks as completed
+- Delete tasks
+- Stores data in MySQL database
 
-This system demonstrates integration of multiple software components into a single educational cybersecurity tool.
+---
+
+### ⏰ Reminder System
+- Checks task reminder dates on startup
+- Displays alerts for due tasks
+- Helps users stay aware of cybersecurity actions
+
+---
+
+### 🧠 Cybersecurity Quiz Module
+- 12+ cybersecurity questions
+- Multiple-choice and true/false formats
+- Immediate feedback per question
+- Final score with performance evaluation
+
+---
+
+### 📊 Activity Log System
+- Records system and user actions
+- Logs:
+  - Task operations
+  - Quiz attempts
+  - Chatbot interactions
+- Displays recent activity history
+
+---
+
+### 🎨 UI Enhancements
+- Welcome sound on startup (Welcome.wav)
+- ASCII art display (ASCIIArt.txt)
+
+---
+
+## 🛠️ Technologies Used
+- VB.NET Windows Forms
+- MySQL Database
+- ADO.NET (MySQL Connector)
+- String-based NLP simulation
+
+---
+
+## 🗄️ Database Structure
+
+### Database Name
+```sql
+CybersecurityChatbotDB
