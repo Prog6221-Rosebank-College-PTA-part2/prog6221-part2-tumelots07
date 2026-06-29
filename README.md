@@ -1,87 +1,280 @@
-# 🛡️ Cybersecurity Awareness Chatbot  
-## VB.NET Windows Forms Application
+# 🛡️ Cybersecurity Awareness Chatbot (Part 3)
+
+## PROG6221 Portfolio of Evidence
+
+**Student:** Tumelo Mohuba  
+**Module:** PROG6221 – Programming 2A 
+**Institution:** Rosebank International (The IIE)  
+**Language:** VB.NET Windows Forms  
+**Database:** MySQL
 
 ---
 
-## 👨‍💻 Project Overview
-This project is a Cybersecurity Awareness Chatbot developed using VB.NET Windows Forms and MySQL as part of a Portfolio of Evidence (POE).
+# 📖 Project Overview
 
-The system is designed to improve cybersecurity awareness through an interactive chatbot while integrating task management, reminders, a quiz module, and activity logging.
+The Cybersecurity Awareness Chatbot is a Windows Forms desktop application developed using VB.NET. The purpose of the application is to educate users about cybersecurity while providing intelligent task management and reminder functionality.
 
-It demonstrates key software engineering principles including:
-- Event-driven programming
-- Database integration (CRUD operations)
-- Basic Natural Language Processing (NLP) simulation
-- Modular system design
+The chatbot allows users to ask cybersecurity-related questions, receive educational advice, manage cybersecurity tasks, complete quizzes, and interact naturally through simple Natural Language Processing (NLP).
+
+This project extends the previous versions by introducing conversation memory, sentiment analysis, improved intent recognition, smart task creation, and context-aware responses.
 
 ---
 
-## 🎯 Key Features
+# ✨ Features
 
-### 💬 Chatbot with NLP Simulation
-- Keyword-based intent detection
-- Cybersecurity topics:
-  - Password security
-  - Phishing awareness
-  - Privacy protection
-  - Two-factor authentication
-- Sentiment detection:
-  - Positive
-  - Negative
-  - Confused
+## Cybersecurity Awareness
+
+- Password security advice
+- Phishing awareness
+- Privacy protection tips
+- Two-Factor Authentication (2FA) guidance
 
 ---
 
-### 📋 Task Assistant (MySQL Integration)
-- Create cybersecurity-related tasks
-- View all tasks
-- Mark tasks as completed
+## Task Management
+
+- Add cybersecurity tasks
 - Delete tasks
-- Stores data in MySQL database
+- Mark tasks as completed
+- View all tasks
+- Store tasks permanently in MySQL
 
 ---
 
-### ⏰ Reminder System
-- Checks task reminder dates on startup
-- Displays alerts for due tasks
-- Helps users stay aware of cybersecurity actions
+## Smart Reminder System
+
+The chatbot automatically recognises reminder phrases such as:
+
+- Tomorrow
+- Next week
+- Next month
+- In 3 days
+- In 7 days
+
+Example:
+
+```
+Remind me tomorrow to update my password.
+```
+
+The chatbot automatically creates and stores the task.
 
 ---
 
-### 🧠 Cybersecurity Quiz Module
-- 12+ cybersecurity questions
-- Multiple-choice and true/false formats
-- Immediate feedback per question
-- Final score with performance evaluation
+## Conversation Memory
+
+The chatbot remembers:
+
+- User's name
+- Favourite cybersecurity topic
+
+Example:
+
+```
+User:
+I like phishing.
+
+Later...
+
+User:
+What do you remember about me?
+
+Bot:
+I remember that you're interested in phishing.
+```
 
 ---
 
-### 📊 Activity Log System
-- Records system and user actions
-- Logs:
-  - Task operations
-  - Quiz attempts
-  - Chatbot interactions
-- Displays recent activity history
+## Context Awareness
+
+The chatbot remembers the current discussion.
+
+Example:
+
+```
+User:
+Tell me about passwords.
+
+User:
+Tell me more.
+```
+
+The chatbot continues discussing passwords instead of changing topics.
 
 ---
 
-### 🎨 UI Enhancements
-- Welcome sound on startup (Welcome.wav)
-- ASCII art display (ASCIIArt.txt)
+## Sentiment Analysis
+
+The chatbot recognises simple emotional states including:
+
+- Positive
+- Negative
+- Confused
+
+It adapts its responses accordingly.
 
 ---
 
-## 🛠️ Technologies Used
-- VB.NET Windows Forms
-- MySQL Database
-- ADO.NET (MySQL Connector)
-- String-based NLP simulation
+## Cybersecurity Quiz
+
+A built-in quiz allows users to test their cybersecurity knowledge.
 
 ---
 
-## 🗄️ Database Structure
+## Activity Log
 
-### Database Name
-```sql
+Every important interaction is recorded, including:
+
+- User questions
+- Tasks created
+- Quiz activity
+- Reminder notifications
+- Chatbot responses
+
+---
+
+## Welcome Experience
+
+When the application starts it:
+
+- Plays a welcome sound
+- Displays ASCII Art
+- Greets the user
+- Requests the user's name
+
+---
+
+# 💻 Technologies Used
+
+- VB.NET (.NET Framework)
+- Windows Forms
+- MySQL
+- MySQL Connector/NET
+- Visual Studio 2022
+- Git
+- GitHub
+
+---
+
+# 📂 Project Structure
+
+```
+CybersecurityChatbotPart3
+│
+├── Form1.vb
+├── Form1.Designer.vb
+├── DatabaseHelper.vb
+├── ActivityLog.vb
+├── QuizForm.vb
+├── Resources
+│   ├── ASCIIArt.txt
+│   └── Welcome.wav
+├── App.config
+```
+
+---
+
+# 🗄️ Database
+
+Database Name
+
+```
 CybersecurityChatbotDB
+```
+
+Tasks Table
+
+| Column | Description |
+|----------|-------------|
+| TaskID | Primary Key |
+| Title | Task title |
+| Description | Task description |
+| ReminderDate | Reminder date |
+| IsCompleted | Completion status |
+
+---
+
+# ▶️ How to Run
+
+## Requirements
+
+- Visual Studio 2022
+- .NET Framework
+- MySQL Server
+- MySQL Connector/NET
+
+---
+
+## Steps
+
+1. Clone the repository.
+
+```
+git clone https://github.com/Prog6221-Rosebank-College-PTA-part2/prog6221-part2-tumelots07.git
+```
+
+2. Open the solution in Visual Studio.
+
+3. Restore NuGet packages.
+
+4. Create the MySQL database.
+
+5. Update the connection string inside:
+
+```
+DatabaseHelper.vb
+```
+
+and
+
+```
+Form1.vb
+```
+
+if necessary.
+
+6. Run the application.
+
+---
+
+# 🎥 Demonstration Video
+
+YouTube (Unlisted)
+
+```(https://youtu.be/V4xbcwgZLVE)
+```
+
+---
+
+# 📌 Future Improvements
+
+- Voice recognition
+- AI-powered responses
+- Email notifications
+- User accounts
+- Cloud database integration
+- Mobile application
+
+---
+
+# 📚 References
+
+Microsoft. (2025). *VB.NET Documentation*. https://learn.microsoft.com/
+
+Oracle. (2025). *MySQL Documentation*. https://dev.mysql.com/doc/
+
+The IIE. (2025). *PROG6221 Learning Material*. https://mystudies.iie.edu.za/
+
+OpenAI. (2026). *ChatGPT (GPT-5.5)*. https://chatgpt.com/
+
+---
+
+# 👨‍💻 Author
+
+**Tshiamo Tumelo Simango**
+
+PROG6221 Portfolio of Evidence
+
+Cybersecurity Awareness Chatbot Part 3
+
+2026
