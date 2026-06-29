@@ -77,22 +77,6 @@
                                "B",
                                "Never share your passwords."))
 
-        Questions.Add(New Question("What should you do if your account is hacked?",
-                               "Ignore it",
-                               "Change your password immediately",
-                               "Create another email",
-                               "Delete your computer",
-                               "B",
-                               "Changing your password is the first step."))
-
-        Questions.Add(New Question("What software helps protect against malware?",
-                               "Calculator",
-                               "Antivirus",
-                               "Paint",
-                               "Notepad",
-                               "B",
-                               "Antivirus software helps detect malware."))
-
         Questions.Add(New Question("What is social engineering?",
                            "A programming language",
                            "Tricking people into giving information",
@@ -108,6 +92,22 @@
                                    "Refresh repeatedly",
                                    "B",
                                    "Suspicious websites should be avoided and closed immediately."))
+
+        Questions.Add(New Question("What should you do if your account is hacked?",
+                               "Ignore it",
+                               "Change your password immediately",
+                               "Create another email",
+                               "Delete your computer",
+                               "B",
+                               "Changing your password is the first step."))
+
+        Questions.Add(New Question("What software helps protect against malware?",
+                               "Calculator",
+                               "Antivirus",
+                               "Paint",
+                               "Notepad",
+                               "B",
+                               "Antivirus software helps detect malware."))
 
     End Sub
 
