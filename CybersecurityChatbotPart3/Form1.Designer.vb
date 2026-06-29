@@ -50,7 +50,7 @@ Partial Class Form1
         Me.lblHeading.AutoSize = True
         Me.lblHeading.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHeading.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.lblHeading.Location = New System.Drawing.Point(130, -1)
+        Me.lblHeading.Location = New System.Drawing.Point(184, 31)
         Me.lblHeading.Name = "lblHeading"
         Me.lblHeading.Size = New System.Drawing.Size(489, 41)
         Me.lblHeading.TabIndex = 0
@@ -74,7 +74,7 @@ Partial Class Form1
         Me.rtbChat.Location = New System.Drawing.Point(29, 100)
         Me.rtbChat.Name = "rtbChat"
         Me.rtbChat.ReadOnly = True
-        Me.rtbChat.Size = New System.Drawing.Size(665, 379)
+        Me.rtbChat.Size = New System.Drawing.Size(798, 379)
         Me.rtbChat.TabIndex = 2
         Me.rtbChat.Text = ""
         '
@@ -82,16 +82,16 @@ Partial Class Form1
         '
         Me.txtChat.Location = New System.Drawing.Point(29, 492)
         Me.txtChat.Name = "txtChat"
-        Me.txtChat.Size = New System.Drawing.Size(516, 22)
+        Me.txtChat.Size = New System.Drawing.Size(618, 22)
         Me.txtChat.TabIndex = 3
         '
         'btnSend
         '
         Me.btnSend.BackColor = System.Drawing.Color.LimeGreen
         Me.btnSend.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSend.Location = New System.Drawing.Point(574, 485)
+        Me.btnSend.Location = New System.Drawing.Point(688, 485)
         Me.btnSend.Name = "btnSend"
-        Me.btnSend.Size = New System.Drawing.Size(120, 35)
+        Me.btnSend.Size = New System.Drawing.Size(139, 35)
         Me.btnSend.TabIndex = 4
         Me.btnSend.Text = "Send"
         Me.btnSend.UseVisualStyleBackColor = False

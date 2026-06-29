@@ -339,7 +339,7 @@ Public Class Form1
 
     End Function
 
-    Private Sub ProcessSmartCommand(input As String)
+    Private Function ProcessSmartCommand(input As String) As Boolean
 
         input = input.ToLower()
 
@@ -386,7 +386,7 @@ Public Class Form1
 
                 LoadTasks()
 
-                Exit Sub
+                Return True
 
             End If
 
@@ -408,7 +408,7 @@ Public Class Form1
 
                 LoadTasks()
 
-                Exit Sub
+                Return True
 
             End If
 
@@ -428,13 +428,15 @@ Public Class Form1
 
                 LoadTasks()
 
-                Exit Sub
+                Return True
 
             End If
 
         End If
 
-    End Sub
+        Return False
+
+    End Function
 
     Private Sub btnSend_Click(sender As Object, e As EventArgs) Handles btnSend.Click
 
@@ -448,9 +450,11 @@ Public Class Form1
 
         txtChat.Clear()
 
-        Dim intent As String = GetIntent(input)
+        If ProcessSmartCommand(input) Then
+            Exit Sub
+        End If
 
-        ProcessSmartCommand(input)
+        Dim intent As String = GetIntent(input)
 
         Dim sentiment As String = GetSentiment(input)
 
