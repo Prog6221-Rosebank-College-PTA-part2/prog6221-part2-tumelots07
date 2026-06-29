@@ -93,6 +93,22 @@
                                "B",
                                "Antivirus software helps detect malware."))
 
+        Questions.Add(New Question("What is social engineering?",
+                           "A programming language",
+                           "Tricking people into giving information",
+                           "A type of firewall",
+                           "A browser setting",
+                           "B",
+                           "Social engineering manipulates people into revealing sensitive info."))
+
+        Questions.Add(New Question("What should you do if a website looks suspicious?",
+                                   "Enter your details",
+                                   "Close it immediately",
+                                   "Bookmark it",
+                                   "Refresh repeatedly",
+                                   "B",
+                                   "Suspicious websites should be avoided and closed immediately."))
+
     End Sub
 
     '=========================

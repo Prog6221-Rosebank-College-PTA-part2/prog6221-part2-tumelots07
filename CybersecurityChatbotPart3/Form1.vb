@@ -1,5 +1,7 @@
 ﻿Imports System.Security.Authentication.ExtendedProtection
 Imports MySql.Data.MySqlClient
+Imports System.Media
+Imports System.IO
 
 Public Class Form1
 
@@ -27,6 +29,31 @@ Public Class Form1
 
             MessageBox.Show("Database connection failed." & vbCrLf & ex.Message)
 
+        End Try
+
+        '========================
+        ' WELCOME SOUND + ASCII
+        '========================
+
+        Try
+            'Play welcome sound
+            Dim player As New SoundPlayer("Resources\Welcome.wav")
+            player.Play()
+
+            'Load ASCII Art
+            If File.Exists("ASCIIArt.txt") Then
+                Dim ascii As String = File.ReadAllText("Resources\ASCIIArt.txt")
+                rtbChat.AppendText(Environment.NewLine &
+                                   ascii &
+                                   Environment.NewLine &
+                                   "Welcome to Cybersecurity Chatbot!" &
+                                   Environment.NewLine)
+            Else
+                rtbChat.AppendText("Welcome to Cybersecurity Chatbot!" & Environment.NewLine)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Welcome resources missing: " & ex.Message)
         End Try
 
     End Sub

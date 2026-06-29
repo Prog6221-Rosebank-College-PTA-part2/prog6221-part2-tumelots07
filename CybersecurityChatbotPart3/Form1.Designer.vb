@@ -50,7 +50,7 @@ Partial Class Form1
         Me.lblHeading.AutoSize = True
         Me.lblHeading.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHeading.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.lblHeading.Location = New System.Drawing.Point(130, 35)
+        Me.lblHeading.Location = New System.Drawing.Point(130, -1)
         Me.lblHeading.Name = "lblHeading"
         Me.lblHeading.Size = New System.Drawing.Size(489, 41)
         Me.lblHeading.TabIndex = 0
@@ -169,7 +169,7 @@ Partial Class Form1
         Me.btnAddTask.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddTask.Location = New System.Drawing.Point(932, 284)
         Me.btnAddTask.Name = "btnAddTask"
-        Me.btnAddTask.Size = New System.Drawing.Size(154, 45)
+        Me.btnAddTask.Size = New System.Drawing.Size(178, 45)
         Me.btnAddTask.TabIndex = 12
         Me.btnAddTask.Text = "Add Task"
         Me.btnAddTask.UseVisualStyleBackColor = False
@@ -180,7 +180,7 @@ Partial Class Form1
         Me.btnViewTasks.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnViewTasks.Location = New System.Drawing.Point(932, 347)
         Me.btnViewTasks.Name = "btnViewTasks"
-        Me.btnViewTasks.Size = New System.Drawing.Size(154, 44)
+        Me.btnViewTasks.Size = New System.Drawing.Size(178, 44)
         Me.btnViewTasks.TabIndex = 13
         Me.btnViewTasks.Text = "View Tasks"
         Me.btnViewTasks.UseVisualStyleBackColor = False
@@ -191,7 +191,7 @@ Partial Class Form1
         Me.btnCompleteTask.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCompleteTask.Location = New System.Drawing.Point(932, 471)
         Me.btnCompleteTask.Name = "btnCompleteTask"
-        Me.btnCompleteTask.Size = New System.Drawing.Size(154, 43)
+        Me.btnCompleteTask.Size = New System.Drawing.Size(178, 43)
         Me.btnCompleteTask.TabIndex = 14
         Me.btnCompleteTask.Text = "Complete Task"
         Me.btnCompleteTask.UseVisualStyleBackColor = False
@@ -203,7 +203,7 @@ Partial Class Form1
         Me.btnDeleteTask.ForeColor = System.Drawing.Color.White
         Me.btnDeleteTask.Location = New System.Drawing.Point(932, 410)
         Me.btnDeleteTask.Name = "btnDeleteTask"
-        Me.btnDeleteTask.Size = New System.Drawing.Size(154, 44)
+        Me.btnDeleteTask.Size = New System.Drawing.Size(178, 44)
         Me.btnDeleteTask.TabIndex = 15
         Me.btnDeleteTask.Text = "Delete Task"
         Me.btnDeleteTask.UseVisualStyleBackColor = False
@@ -228,7 +228,7 @@ Partial Class Form1
         Me.btnActivityLog.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActivityLog.Location = New System.Drawing.Point(932, 529)
         Me.btnActivityLog.Name = "btnActivityLog"
-        Me.btnActivityLog.Size = New System.Drawing.Size(154, 42)
+        Me.btnActivityLog.Size = New System.Drawing.Size(178, 42)
         Me.btnActivityLog.TabIndex = 17
         Me.btnActivityLog.Text = "Activity Log"
         Me.btnActivityLog.UseVisualStyleBackColor = False
