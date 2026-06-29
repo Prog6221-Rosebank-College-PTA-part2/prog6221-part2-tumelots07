@@ -2,7 +2,8 @@
 
 ## PROG6221 Portfolio of Evidence
 
-**Student:** Tumelo Mohuba  
+**Student:** Tshiamo Tumelo Simango  
+**Student Number:** ST10452101
 **Module:** PROG6221 – Programming 2A 
 **Institution:** Rosebank International (The IIE)  
 **Language:** VB.NET Windows Forms  
