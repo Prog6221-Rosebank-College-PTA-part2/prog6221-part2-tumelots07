@@ -7,6 +7,10 @@ Public Class Form1
 
     Private db As New DatabaseHelper()
 
+    Private userName As String = ""
+    Private favouriteTopic As String = ""
+    Private currentTopic As String = ""
+
     Private Sub AddActivity(action As String)
         ActivityLog.AddLog(action)
     End Sub
@@ -41,7 +45,7 @@ Public Class Form1
             player.Play()
 
             'Load ASCII Art
-            If File.Exists("ASCIIArt.txt") Then
+            If File.Exists("Resources\ASCIIArt.txt") Then
                 Dim ascii As String = File.ReadAllText("Resources\ASCIIArt.txt")
                 rtbChat.AppendText(Environment.NewLine &
                                    ascii &
@@ -304,6 +308,12 @@ Public Class Form1
 
             Return "HELP"
 
+        ElseIf input.Contains("what do you remember") Or
+       input.Contains("remember me") Or
+       input.Contains("what do you know about me") Then
+
+        Return "MEMORY"
+
         End If
 
         Return "UNKNOWN"
@@ -442,6 +452,24 @@ Public Class Form1
 
         Dim input As String = txtChat.Text.Trim().ToLower()
 
+        If userName = "" Then
+
+            userName = txtChat.Text.Trim()
+
+            rtbChat.AppendText(
+        "Bot: Nice to meet you, " &
+        userName &
+        "! I'm here to help you stay safe online." &
+        Environment.NewLine)
+
+            AddActivity("User introduced themselves.")
+
+            txtChat.Clear()
+
+            Exit Sub
+
+        End If
+
         If input = "" Then Exit Sub
 
         rtbChat.AppendText("You: " & txtChat.Text & Environment.NewLine)
@@ -480,12 +508,51 @@ Public Class Form1
 
         End Select
 
+        If input.Contains("interested in password") Then
+
+            favouriteTopic = "passwords"
+
+        ElseIf input.Contains("interested in phishing") Then
+
+            favouriteTopic = "phishing"
+
+        ElseIf input.Contains("interested in privacy") Then
+
+            favouriteTopic = "privacy"
+
+        ElseIf input.Contains("interested in 2fa") Then
+
+            favouriteTopic = "two-factor authentication"
+
+        End If
+
         Select Case intent
+
+            Case "MEMORY"
+
+                If favouriteTopic <> "" Then
+
+                    rtbChat.AppendText(
+                        "Bot: I remember that you're interested in " &
+                        favouriteTopic &
+                        "." &
+                        Environment.NewLine)
+
+                Else
+
+                    rtbChat.AppendText(
+                        "Bot: I don't remember a favourite cybersecurity topic yet." &
+                        Environment.NewLine)
+
+                End If
 
             Case "GREETING"
 
-                rtbChat.AppendText("Bot: Hello! Welcome to the Cybersecurity Awareness Chatbot." &
-                               Environment.NewLine)
+                rtbChat.AppendText(
+"Bot: Hello " &
+userName &
+"! Welcome back to the Cybersecurity Awareness Chatbot." &
+Environment.NewLine)
                 AddActivity("Bot greeted the user.")
 
             Case "HOWAREYOU"
